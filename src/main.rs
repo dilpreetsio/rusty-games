@@ -1,3 +1,7 @@
+fn clear_screen() {
+    print!("\x1b[2J\x1b[1;1H");
+}
+
 struct TicTacToe {
     board: Vec<Vec<char>>,
     current_player: char,
@@ -63,10 +67,11 @@ impl TicTacToe {
     }
 
     pub fn play(&mut self) {
-        self.print_board();
         // let mut game_loop = true;
         let mut turns = 0;
         loop {
+            clear_screen();
+            self.print_board();
             if turns == 9 {
                 println!("Game Draw");
                 break;
@@ -152,6 +157,8 @@ impl Hangman {
 
     fn play(&mut self) {
         loop {
+            clear_screen();
+
             let mut guess = String::new();
             println!("Current word: {}", self.current_word);
             println!(
