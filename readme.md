@@ -7,4 +7,4 @@ Games
 - [ ] Minesweeper
 - [ ] 2048
 - [ ] Wordle
-- [ ] Hangman
+- [x] Hangman
